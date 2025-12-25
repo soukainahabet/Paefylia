@@ -1,0 +1,31 @@
+server:
+    port: 8081
+spring:
+  application:
+    name: demo
+
+# ---------------------- MYSQL ----------------------
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/parfylia
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  # ---------------------- MONGODB ----------------------
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: parfylia_db
+
+  # ---------------------- Neo4j ----------------------
+
+    neo4j:
+      uri: neo4j://127.0.0.1:7687
+      username: neo4j
+      password: Neo4j123
