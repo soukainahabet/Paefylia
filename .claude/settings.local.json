@@ -16,7 +16,12 @@
       "Bash(cmd.exe /c \"mvnw.cmd clean compile -q\")",
       "Bash(cmd.exe /c \"mvnw.cmd spring-boot:run -q\")",
       "Bash(timeout:*)",
-      "Bash(cmd.exe /c \"mvnw.cmd spring-boot:run\")"
+      "Bash(cmd.exe /c \"mvnw.cmd spring-boot:run\")",
+      "Bash(mvnw.cmd spring-boot:run:*)",
+      "Bash(cmd.exe /c \"cd /d D:\\\\ParfumerieParfylia\\\\Backend\\\\parfilya\\\\parfilya && mvnw.cmd spring-boot:run\")",
+      "Bash(TOKEN=\"eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiVVNFUiIsInBlcm1pc3Npb25zIjoiUkVBRCIsInN1YiI6InRlc3QyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzY2ODM3MjEwLCJleHAiOjE3NjY5MjM2MTB9.1C5vdiNRZfxIOinLj4S-inm2gWYOGYpsIRWd4Isoycc4izo7q1JahmDFNN1GLdXK\")",
+      "Bash(cmd.exe /c \"taskkill /F /PID 7848\")",
+      "Bash(cmd.exe /c \"cd /d D:\\\\ParfumerieParfylia\\\\Backend\\\\parfilya\\\\parfilya && mvnw.cmd spring-boot:run -q\")"
     ]
   }
 }
