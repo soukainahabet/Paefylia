@@ -16,7 +16,28 @@
       "Bash(cmd.exe /c \"mvnw.cmd clean compile -q\")",
       "Bash(cmd.exe /c \"mvnw.cmd spring-boot:run -q\")",
       "Bash(timeout:*)",
-      "Bash(cmd.exe /c \"mvnw.cmd spring-boot:run\")"
+      "Bash(cmd.exe /c \"mvnw.cmd spring-boot:run\")",
+      "Bash(mvnw.cmd spring-boot:run:*)",
+      "Bash(cmd.exe /c \"cd /d D:\\\\ParfumerieParfylia\\\\Backend\\\\parfilya\\\\parfilya && mvnw.cmd spring-boot:run\")",
+      "Bash(TOKEN=\"eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiVVNFUiIsInBlcm1pc3Npb25zIjoiUkVBRCIsInN1YiI6InRlc3QyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzY2ODM3MjEwLCJleHAiOjE3NjY5MjM2MTB9.1C5vdiNRZfxIOinLj4S-inm2gWYOGYpsIRWd4Isoycc4izo7q1JahmDFNN1GLdXK\")",
+      "Bash(cmd.exe /c \"taskkill /F /PID 7848\")",
+      "Bash(cmd.exe /c \"cd /d D:\\\\ParfumerieParfylia\\\\Backend\\\\parfilya\\\\parfilya && mvnw.cmd spring-boot:run -q\")",
+      "Bash(cmd.exe /c \"cd /d D:\\\\ParfumerieParfylia\\\\Backend\\\\parfilya\\\\parfilya && mvnw.cmd clean compile -q\")",
+      "Bash(TOKEN=\"eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiVVNFUiIsInBlcm1pc3Npb25zIjoiUkVBRCIsInN1YiI6Im9yZGVydGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTc2Njg0OTQ3MywiZXhwIjoxNzY2OTM1ODczfQ.mT3KFAmR0yBjNVZcE7cDioOuoM7XLH1hTIaGidyl-ZkuC-yNWgOA4k3U7uan7ApR\")",
+      "Bash(__NEW_LINE__ echo \"=== 1. Créer une adresse ===\")",
+      "Bash(__NEW_LINE__ echo \"=== 2. Ajouter produits au panier ===\")",
+      "Bash(__NEW_LINE__ echo \"=== 3. Résumé du panier ===\")",
+      "Bash(__NEW_LINE__ echo \"\")",
+      "Bash(__NEW_LINE__ echo \"=== 5. Voir la commande créée ===\")",
+      "Bash(cmd.exe /c \"taskkill /F /PID 20096\")",
+      "Bash(TOKEN=\"eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiVVNFUiIsInBlcm1pc3Npb25zIjoiUkVBRCIsInN1YiI6Im9yZGVyMkBleGFtcGxlLmNvbSIsImlhdCI6MTc2Njg1MDA4NywiZXhwIjoxNzY2OTM2NDg3fQ.oFSqqad0Ahc8DHH220wvz930hiWLbn0MBLAX0QDoGav1G_VI5AD7lNU-c72BO5DA\")",
+      "Bash(__NEW_LINE__ echo \"=== 2. Créer une adresse ===\")",
+      "Bash(__NEW_LINE__ echo \"=== 4. Résumé du panier ===\")",
+      "Bash(__NEW_LINE__ echo \"=== 6. Panier après commande \\(devrait être vide\\) ===\")",
+      "Bash(__NEW_LINE__ echo \"=== 9. Historique détaillé de la commande \\(MongoDB\\) ===\")",
+      "Bash(__NEW_LINE__ echo \"=== 12. Annuler la commande ===\")",
+      "Bash(__NEW_LINE__ echo \"=== 3. Annuler la commande 4 ===\")",
+      "Bash(cmd.exe /c \"taskkill /F /PID 9188\")"
     ]
   }
 }

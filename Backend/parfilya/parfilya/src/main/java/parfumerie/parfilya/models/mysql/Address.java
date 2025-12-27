@@ -1,5 +1,6 @@
 package parfumerie.parfilya.models.mysql;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,6 +17,8 @@ public class Address {
     private String phone;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User user;
 
     // Getters & Setters
