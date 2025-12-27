@@ -1,12 +1,17 @@
 package parfumerie.parfilya.controllers.user;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
+import parfumerie.parfilya.dto.order.CreateOrderRequest;
 import parfumerie.parfilya.models.mysql.Order;
 import parfumerie.parfilya.models.mysql.OrderStatus;
 import parfumerie.parfilya.models.mysql.User;
 import parfumerie.parfilya.services.user.OrderService;
 import parfumerie.parfilya.services.user.UserService;
-import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -21,29 +26,47 @@ public class OrderController {
         this.userService = userService;
     }
 
-    @PostMapping("/{userId}")
-    public Order create(@PathVariable Long userId, @RequestBody Order order) {
-        User user = userService.findById(userId)
+    private User getCurrentUser() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String email = ((User) auth.getPrincipal()).getEmail();
+        return userService.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));
-        order.setUser(user);
-        return orderService.create(order);
     }
 
-    @GetMapping("/user/{userId}")
-    public List<Order> getUserOrders(@PathVariable Long userId) {
-        User user = userService.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User not found"));
-        return orderService.findByUser(user);
+    @GetMapping
+    public ResponseEntity<List<Order>> getOrders() {
+        User user = getCurrentUser();
+        return ResponseEntity.ok(orderService.findByUser(user));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Order> getOrderById(@PathVariable Long id) {
+        return orderService.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PostMapping
+    public ResponseEntity<Order> createOrder(@RequestBody CreateOrderRequest request) {
+        User user = getCurrentUser();
+
+        Order order = new Order();
+        order.setUser(user);
+        order.setStatus(OrderStatus.PENDING);
+        order.setCreatedAt(LocalDateTime.now());
+
+        return ResponseEntity.ok(orderService.create(order));
     }
 
     @PutMapping("/{id}/status")
-    public Order updateStatus(@PathVariable Long id,
-                              @RequestParam OrderStatus status) {
-        return orderService.updateStatus(id, status);
+    public ResponseEntity<Order> updateStatus(@PathVariable Long id,
+                                              @RequestParam OrderStatus status) {
+        return ResponseEntity.ok(orderService.updateStatus(id, status));
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteOrder(@PathVariable Long id) {
         orderService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }

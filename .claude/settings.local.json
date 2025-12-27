@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"D:\\\\ParfumerieParfylia\" log --oneline -10)",
+      "Bash(cmd.exe /c \"mvnw.cmd clean compile\")",
+      "Bash(./mvnw clean:*)",
+      "Bash(cat:*)",
+      "Bash(timeout 60 ./mvnw:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(cmd.exe /c \"taskkill /F /PID 23276\")",
+      "Bash(powershell:*)",
+      "Bash(curl:*)",
+      "Bash(TOKEN=\"eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiVVNFUiIsInBlcm1pc3Npb25zIjoiUkVBRCIsInN1YiI6InRlc3RAZXhhbXBsZS5jb20iLCJpYXQiOjE3NjY3ODAzNDAsImV4cCI6MTc2Njg2Njc0MH0.QcrWmOG4b9IKbJ-WaUef_ytcvxtNCe3NmwSAIsExnsCs2t6I_hi3rc0HpTfnAMGp\")",
+      "Bash(cmd.exe /c \"mvnw.cmd clean compile -q\")",
+      "Bash(cmd.exe /c \"mvnw.cmd spring-boot:run -q\")",
+      "Bash(timeout:*)",
+      "Bash(cmd.exe /c \"mvnw.cmd spring-boot:run\")"
+    ]
+  }
+}

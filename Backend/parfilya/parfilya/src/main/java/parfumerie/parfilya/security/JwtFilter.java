@@ -70,7 +70,7 @@ public class JwtFilter extends OncePerRequestFilter {
                             }
                         }
                     }
-                }
+                    }
 
 
                 // Ajouter les permissions

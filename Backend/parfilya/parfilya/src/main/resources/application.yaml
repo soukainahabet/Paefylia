@@ -1,11 +1,16 @@
 server:
-    port: 8081
+  port: 8081
+
+# --------------------- JWT SECURITY ----------------------
+jwt:
+  secret: ${JWT_SECRET:votre-cle-secrete-256-bits-minimum-a-changer-en-production}
+  expiration: 86400000
+
 spring:
   application:
     name: demo
 
-# ---------------------- MYSQL ----------------------
-
+  # ---------------------- MYSQL ----------------------
   datasource:
     url: jdbc:mysql://localhost:3306/parfylia
     username: root
@@ -16,6 +21,8 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    open-in-view: false
+
   # ---------------------- MONGODB ----------------------
   data:
     mongodb:
@@ -24,8 +31,8 @@ spring:
       database: parfylia_db
 
   # ---------------------- Neo4j ----------------------
-
-    neo4j:
-      uri: neo4j://127.0.0.1:7687
+  neo4j:
+    uri: neo4j://127.0.0.1:7687
+    authentication:
       username: neo4j
       password: Neo4j123

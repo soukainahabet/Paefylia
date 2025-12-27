@@ -1,5 +1,6 @@
 package parfumerie.parfilya.models.mysql;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
@@ -23,6 +24,7 @@ public class User {
     private String username;
 
     @Column(nullable = false)
+    @JsonIgnore
     private String password;
 
     @ElementCollection(fetch = FetchType.EAGER)
@@ -37,7 +39,9 @@ public class User {
 
     public User() {}
 
-    public User(String email, String s, List<SimpleGrantedAuthority> authorities) {
+    public User(String email, String password, List<SimpleGrantedAuthority> authorities) {
+        this.email = email;
+        this.password = password;
     }
 
     // Getters & Setters

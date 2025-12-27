@@ -1,5 +1,6 @@
 package parfumerie.parfilya.models.mysql;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,6 +17,7 @@ public class CartItem {
     private Integer quantity;
 
     @ManyToOne
+    @JsonIgnore
     private Cart cart;
 
     // Getters & Setters

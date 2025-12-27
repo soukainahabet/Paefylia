@@ -1,6 +1,6 @@
 package parfumerie.parfilya.models.mysql;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -18,6 +18,7 @@ public class OrderItem {
     private Double price;
 
     @ManyToOne
+    @JsonIgnore
     private Order order;
 
     // Getters & Setters
